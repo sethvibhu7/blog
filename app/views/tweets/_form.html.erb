@@ -1,0 +1,33 @@
+<%= form_for @tweet do |f| %>
+	
+		<p>
+			<%=f.label :tag %><br>
+			<%= f.text_field :tag %>
+		</p>
+		<p>
+ 			 <%= f.label :tag_list %><br />
+ 			 <%= f.text_field :tag_list %>
+		</p>
+		<p> 
+			<%= f.label :status 	%><br>
+			<%=f.text_area :status %>
+		</p>
+
+		<p>
+			<%=f.submit :Post %>
+		</p>
+		
+
+	<%end%>
+
+	 <% if @tweet.errors.any? %>
+  <div id="er" >
+    <%= pluralize(@tweet.errors.count, "error") %> </h3>
+    <ul>
+    <% @tweet.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  
+    <% end %>
+    </ul>
+  </div>
+  <% end %>

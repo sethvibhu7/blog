@@ -1,0 +1,9 @@
+
+<%=link_to 'All tweets', tweets_path %>
+
+<h1> Edit the tweet</h1>
+	
+	<%= render 'form'%>
+
+
+<!-- -##### or can be done by <%= form_for :tweet, url: tweet_path(@tweet), method: :patch do |f| -->
