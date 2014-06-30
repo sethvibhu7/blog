@@ -4,9 +4,9 @@ class TweetsController < ApplicationController
     @tweet=Tweet.new
   end
   def index
-   @tweets = if params[:tag]
-     @mode=params[:tag]
-     Tweet.where(tag: params[:tag])
+   @tweets = if params[:title]
+     @mode=params[:title]
+     Tweet.where(title: params[:title])
      
     else 
   	Tweet.all 
@@ -45,6 +45,6 @@ def destroy
 end
   private
   def tweet_params
-    params.require(:tweet).permit(:tag, :status)
+    params.require(:tweet).permit(:title, :status,:tag_list)
   end
 end

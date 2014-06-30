@@ -1,18 +1,15 @@
 <%= link_to 'new tweet', new_tweet_path %>
 <%=link_to 'All tweets', tweets_path %>
 
-<h1>Tweets
- <% if @mode%>
-    about <%=@mode %> 
-    <% end %>  
- </h1>   
+<h1> Tweets about <%=@mode%> </h1>
+
 <table>
-  <tr>
-    <th>title</th>
-    <th colspan='5' >Status</th>
-  </tr>
- 
-  <% @tweets.each do |t| %>
+	<tr>
+		<th> Title </th>
+		<th colspan='2'> status </th>
+	</tr>
+	
+	<% @tweets.each do |t| %>
     <tr>
       <td><%= link_to t.title, '/titles/'+t.title  %></td>
       <td><%=link_to t.status, tweet_path(t) %></td>
@@ -20,5 +17,11 @@
       <td><%=link_to 'Delete', tweet_path(t) , method: :delete, data: {alert:'heyy', confirm: 'u sure?'} %>
 
     </tr>
-  <% end %>
+    <% end %>
+
+
 </table>
+
+<% if @tweets.count==0 %>
+<p>	No posts </p>
+	<% end %>

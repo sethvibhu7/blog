@@ -3,7 +3,7 @@ class Tweet < ActiveRecord::Base
 	has_many :taggings
 	has_many :tags, through: :taggings
 	belongs_to :user
-	validates :tag, presence: true,
+	validates :title, presence: true,
 					length: {minimum: 3}
 	validates :status, presence: true
 	def tag_list

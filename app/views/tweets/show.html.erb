@@ -1,8 +1,8 @@
 <%= link_to 'All tweets', tweets_path %>
 <p>
 
-  <strong>Tag:</strong>
-  <%= link_to @tweet.tag, '/tags/'+ @tweet.tag  %>
+  <strong>Title:</strong>
+  <%= link_to @tweet.title, '/titles/'+ @tweet.title  %>
 </p>
  
 <p>
@@ -14,7 +14,7 @@
 
   <strong>Tags:</strong>
   <% @tweet.tags.each do|t|  %>
-  #<%=t.name %>
+  #<%=link_to t.name, '/tag/'+t.name %>
   <%end%> 
 </p>
 
