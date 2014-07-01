@@ -9,8 +9,14 @@
 </head>
 <body>
 
+<%= link_to 'New tweet', new_tweet_path %>
+<%=link_to 'All tweets', tweets_path %>
+
+
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+
+
 <%= yield %>
 <script>
 	document.getElementById("er").style.color = "Red";
@@ -20,9 +26,9 @@ document.getElementById("er").style.fontSize = "small";
 
 </script>
 <%if model_signed_in?%>
-<%=link_to 'sing out', destroy_model_session_path, method: :delete %>
+<%=link_to 'sign out', destroy_model_session_path, method: :delete %>
   <% else %>
-   <%= link_to 'sing up', new_model_registration_path %>  
+   <%= link_to 'sign up', new_model_registration_path %>  
    <%= link_to 'sign in', model_session_path %>
 <%end%>
 

@@ -7,6 +7,7 @@ class TagController < ApplicationController
 		else
 		[] 
 	end
-		@mode=params[:tag]
+		@mode="#"+params[:tag]
+		render 'tweets/index'
 	end
 end

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :users
   get 'welcome/index'
  root  "welcome#index"
- get 'titles/:title' => 'tweets#index', as: :title_tweeet
- get 'tag/:tag' => 'tag#index'
+ get 'titles/:title' => 'tweets#index', as: :title_tweet
+ get 'tag/:tag' => 'tag#index', as: :show_by_tag
  devise_for :models
 
 

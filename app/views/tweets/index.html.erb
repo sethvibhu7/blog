@@ -1,23 +1,27 @@
-<%= link_to 'new tweet', new_tweet_path %>
-<%=link_to 'All tweets', tweets_path %>
 
 <h1>Tweets
  <% if @mode%>
     about <%=@mode %> 
     <% end %>  
  </h1>   
-<table>
+<table class ="table table-bordered" >
   <tr>
-    <th>title</th>
-    <th colspan='5' >Status</th>
+    <th>Title</th>
+    <th>Status</th>
+  <th>Options</th>
+</th>
   </tr>
  
   <% @tweets.each do |t| %>
     <tr>
-      <td><%= link_to t.title, '/titles/'+t.title  %></td>
-      <td><%=link_to t.status, tweet_path(t) %></td>
+      <td><%= link_to t.title, title_tweet_path(t.title) %></td>
+      <td><%=   link_to  (if(t.status.size>50) 
+                      t.status.slice(0,47)+"..."
+                  else 
+                    t.status
+                   end), tweet_path(t) %></td>
       <td><%= link_to 'Edit', edit_tweet_path(t) %> </td>
-      <td><%=link_to 'Delete', tweet_path(t) , method: :delete, data: {alert:'heyy', confirm: 'u sure?'} %>
+      <td><%=link_to 'Delete', tweet_path(t) , method: :delete, data: { confirm: 'u sure?'} %>
 
     </tr>
   <% end %>

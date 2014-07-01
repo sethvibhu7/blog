@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   end
   def index
    @tweets = if params[:title]
-     @mode=params[:title]
+     @mode="\""+params[:title]+"\""
      Tweet.where(title: params[:title])
      
     else 

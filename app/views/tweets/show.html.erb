@@ -1,27 +1,27 @@
-<%= link_to 'All tweets', tweets_path %>
+
 <p>
 
-  <strong>Title:</strong>
+<strong><font size = 4em>Title:</font></strong>
   <%= link_to @tweet.title, '/titles/'+ @tweet.title  %>
 </p>
- 
 <p>
-  <strong>Status:</strong>
+
+  <strong><font size = 4em>Tags:</font></strong>
+  <% @tweet.tags.each do|t|  %>
+  #<%=link_to t.name, show_by_tag_path(t.name)%> 
+  <%end%> 
+</p> 
+<p>
+	<strong><font size = 4em>Status:</font></strong>
   <%= @tweet.status%>
 
 </p>
-<p>
 
-  <strong>Tags:</strong>
-  <% @tweet.tags.each do|t|  %>
-  #<%=link_to t.name, '/tag/'+t.name %>
-  <%end%> 
-</p>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %>
 <%= link_to 'Delete', tweet_path(@tweet), method: :delete, data:{confirm:"u sure?"} %>
 
-<h3>Comments</h3>
+<h4>Comments</h4>
 <%=render @tweet.comments %>
 
 <%= render "comments/form" %>
