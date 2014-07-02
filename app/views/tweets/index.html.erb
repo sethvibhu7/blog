@@ -1,13 +1,7 @@
-
-
-<%=form_tag tweets_path, :method => :get do %>
-
-<p>
-<%= text_field_tag :search, params[:search] %>
-<%=submit_tag "search", :name => nil %>
-</P>
+<%= form_tag tweets_path, method: :get do%>
+<p><%=text_field_tag :search %>
+<%= submit_tag "Search", name: :nil %></p>
 <%end%>
-
 
 
 <h1>Tweets

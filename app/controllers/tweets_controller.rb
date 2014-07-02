@@ -4,18 +4,12 @@ class TweetsController < ApplicationController
     @tweet=Tweet.new
   end
   def index
-      @search = Tweet.search do 
-      fulltext params[:search]
-      end
-      @tweets=@search.results
- 
-   #@tweets = if params[:title]
-    #@mode="\""+params[:title]+"\""
-   #Tweet.where(title: params[:title])
-     
-   #else 
-  #Tweet.all 
-  #end
+
+  @search=Tweet.search do 
+    fulltext params[:search]
+    end
+    @tweets=@search.results
+    
   end
 
   def create

@@ -3,6 +3,8 @@ source 'https://api.rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem 'devise'
 gem 'sunspot_rails'
 gem 'sunspot_solr'

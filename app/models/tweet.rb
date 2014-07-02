@@ -17,7 +17,7 @@ class Tweet < ActiveRecord::Base
 			tags.map{|tag| tag.name}
 		end
 	end
-	
+
 	def tag_list
  		 self.tags.collect do |t|
  		 	t.name
