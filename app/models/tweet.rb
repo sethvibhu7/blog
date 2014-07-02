@@ -6,6 +6,18 @@ class Tweet < ActiveRecord::Base
 	validates :title, presence: true,
 					length: {minimum: 3}
 	validates :status, presence: true
+	
+	searchable do
+		text :title, :boost=>2
+		text :status
+		text :commnets do 
+			comments.map{|comment| comment.body}
+		end
+		text :tags do 
+			tags.map{|tag| tag.name}
+		end
+	end
+	
 	def tag_list
  		 self.tags.collect do |t|
  		 	t.name

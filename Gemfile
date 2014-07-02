@@ -1,10 +1,12 @@
-source 'https://rubygems.org'
+source 'https://api.rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 gem 'devise'
 gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

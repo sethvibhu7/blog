@@ -1,9 +1,24 @@
 
+
+<%=form_tag tweets_path, :method => :get do %>
+
+<p>
+<%= text_field_tag :search, params[:search] %>
+<%=submit_tag "search", :name => nil %>
+</P>
+<%end%>
+
+
+
 <h1>Tweets
  <% if @mode%>
     about <%=@mode %> 
     <% end %>  
  </h1>   
+
+
+
+
 <table class ="table table-bordered" >
   <tr>
     <th>Title</th>
@@ -26,3 +41,4 @@
     </tr>
   <% end %>
 </table>
+
