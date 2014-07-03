@@ -6,8 +6,6 @@ gem 'rails', '4.1.1'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'devise'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
